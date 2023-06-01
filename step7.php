@@ -20,16 +20,20 @@
 
         return $html;
     }
-    
-    echo getTitle();
 
-    foreach ($song['data']['verse'] as $verse) {
-        echo getChorus();
-        
-        foreach ($verse as $line) {
-            echo $line . '<br>';
+    function getVerses() {
+        global $song;
+
+        foreach ($song['data']['verse'] as $verse) {
+            echo getChorus();
+            
+            foreach ($verse as $line) {
+                echo $line . '<br>';
+            }
         }
     }
     
+    echo getTitle();
+    echo getVerses();
     echo getAuthor();
  ?>
